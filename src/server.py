@@ -23,8 +23,8 @@ class Handler(LineOnlyReceiver):
             message = f"<{self.login}>: {message}"
 
             for user in self.factory.clients:
-                if user is not self:
-                    user.sendLine(message.encode())
+                #if user is not self:
+                user.sendLine(message.encode())
         else:
             if message.startswith("login:"):
                 login = message.replace("login:", "")
